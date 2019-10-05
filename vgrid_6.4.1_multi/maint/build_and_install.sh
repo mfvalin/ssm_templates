@@ -10,3 +10,7 @@ git checkout  collaboration_6.4 || exit 1
 cd src || exit 1
 make install  LIBRMNSHARED=${1:-rmnshared}
 make clean
+mkdir -p ${Here}/src
+[[ -d ${Here}/src ]] || exit 1
+rsync -aurvxlH . ${Here}/src/.
+echo === source published under ${Here}/src ===
