@@ -1,0 +1,7 @@
+Package: vgrid
+Version: 6.4.1
+Platform: multi
+Maintainer: armnmfv
+BuildInfo:
+Description: vertical grid descriptors
+
