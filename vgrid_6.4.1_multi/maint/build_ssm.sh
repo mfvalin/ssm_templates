@@ -8,6 +8,6 @@ cd $Here/.. || exit 1
 SSMDIR=${1:-${TMPDIR:-/tmp}}
 [[ "$2" == FULL ]] || IGNORE="--exclude=Build"
 set -x
-tar zcf ${SSMDIR}/${Package}.ssm ${Package} --exclude=.git ${IGNORE}
+tar ${IGNORE} -zcf ${SSMDIR}/${Package}.ssm ${Package}
 set +x
 echo === ${SSMDIR}/${Package}.ssm DONE ===
