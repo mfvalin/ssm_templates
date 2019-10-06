@@ -12,8 +12,13 @@ profile_path=${profile_dir}/${package_name}.sh
 # remove old script, if any
 rm -f ${profile_path}
 
+#install source from git repository
+cd ${package_home} || exit 1
+git clone https://github.com/mfvalin/vgrid Build || exit 1
+
 # create scripts .sh
 mkdir -p ${profile_dir}
+[[ -d ${profile_dir} ]] || exit 1
 
 cat > "${profile_path}" <<EOF
 if [[ -n "\${VGRIDDESCRIPTORS_VERSION}" && "\${VGRIDDESCRIPTORS_VERSION}" != $(echo ${package_name} | cut -d_ -f2 | cut -d\- -f1) ]];then
@@ -24,3 +29,4 @@ export VGRIDDESCRIPTORS_VERSION=$(echo ${package_name} | cut -d_ -f2 | cut -d\- 
 export VGRIDDESCRIPTORS_SRC=${package_home}/src
 EOF
 
+[[ -r ${profile_path} ]] || exit 1

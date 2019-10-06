@@ -4,7 +4,7 @@ Here=${Here%/maint*}
 Package=${Here##*/}
 echo ==  ${Package} home is $Here ===
 cd $Here || exit 1
-[[ -d Build ]] || git clone https://github.com/mfvalin/vgrid Build
+#[[ -d Build ]] || git clone https://github.com/mfvalin/vgrid Build
 cd Build || exit 1
 git checkout  collaboration_6.4 || exit 1
 cd src || exit 1
