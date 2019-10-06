@@ -8,7 +8,7 @@ cd $Here || exit 1
 cd Build || exit 1
 git checkout  collaboration_6.4 || exit 1
 cd src || exit 1
-make install  LIBRMNSHARED=${1:-rmnshared}
+make install  LIBRMNSHARED=${1:-rmnshared} || exit 1
 make clean
 mkdir -p ${Here}/src
 [[ -d ${Here}/src ]] || exit 1
