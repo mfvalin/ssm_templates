@@ -1,0 +1,7 @@
+Package: massvp4
+Version: 1.0 multi
+Platform:
+Maintainer: armnssm
+BuildInfo:
+Description: portable version of some AIX massv routines
+
